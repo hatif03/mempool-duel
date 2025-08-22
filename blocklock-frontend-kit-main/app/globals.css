@@ -1,0 +1,226 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light Theme - WorkOS Launch Week Style */
+:root {
+  --pixel-purple: #8b5cf6;
+  --pixel-pink: #ec4899;
+  --pixel-orange: #f97316;
+  --pixel-yellow: #fbbf24;
+  --pixel-white: #ffffff;
+  --pixel-black: #000000;
+  --pixel-gray-light: #f3f4f6;
+  --pixel-gray-medium: #6b7280;
+  --pixel-gray-dark: #374151;
+}
+
+body {
+  background: linear-gradient(180deg, var(--pixel-purple) 0%, var(--pixel-pink) 50%, var(--pixel-orange) 100%);
+  font-family: 'Courier New', monospace;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  min-height: 100vh;
+}
+
+/* Pixel Art Grid Background */
+.pixel-grid {
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Pixel Art Text */
+.pixel-text {
+  font-family: 'Courier New', monospace;
+  text-shadow: 
+    1px 1px 0px var(--pixel-black),
+    2px 2px 0px var(--pixel-black);
+  letter-spacing: 1px;
+  color: var(--pixel-black);
+}
+
+.pixel-text-white {
+  font-family: 'Courier New', monospace;
+  text-shadow: 
+    1px 1px 0px var(--pixel-black),
+    2px 2px 0px var(--pixel-black);
+  letter-spacing: 1px;
+  color: var(--pixel-white);
+}
+
+.pixel-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--pixel-white);
+  text-shadow: 
+    2px 2px 0px var(--pixel-black),
+    4px 4px 0px var(--pixel-black),
+    6px 6px 0px var(--pixel-black);
+  letter-spacing: 3px;
+}
+
+/* Pixel Art Buttons */
+.pixel-button {
+  background: var(--pixel-white);
+  border: 3px solid var(--pixel-black);
+  color: var(--pixel-black);
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 
+    inset -2px -2px 0px var(--pixel-black),
+    inset 2px 2px 0px var(--pixel-white);
+  transition: all 0.1s ease;
+}
+
+.pixel-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    inset -2px -2px 0px var(--pixel-black),
+    inset 2px 2px 0px var(--pixel-white),
+    0 4px 0px var(--pixel-black);
+}
+
+.pixel-button:active {
+  transform: translateY(0px);
+  box-shadow: 
+    inset -2px -2px 0px var(--pixel-black),
+    inset 2px 2px 0px var(--pixel-white);
+}
+
+.pixel-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Pixel Art Cards */
+.pixel-card {
+  background: var(--pixel-white);
+  border: 3px solid var(--pixel-black);
+  box-shadow: 
+    inset -2px -2px 0px var(--pixel-black),
+    inset 2px 2px 0px var(--pixel-white);
+}
+
+/* Pixel Art Stars */
+.pixel-star {
+  width: 4px;
+  height: 4px;
+  background: var(--pixel-white);
+  position: absolute;
+  animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Pixel Art Clouds */
+.pixel-cloud {
+  background: var(--pixel-white);
+  border: 2px solid var(--pixel-black);
+  position: absolute;
+  opacity: 0.8;
+}
+
+/* Countdown Timer */
+.countdown-timer {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.countdown-unit {
+  text-align: center;
+}
+
+.countdown-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--pixel-white);
+  text-shadow: 
+    2px 2px 0px var(--pixel-black),
+    4px 4px 0px var(--pixel-black);
+  display: block;
+  background: var(--pixel-black);
+  border: 2px solid var(--pixel-white);
+  padding: 1rem;
+  min-width: 80px;
+}
+
+.countdown-label {
+  font-size: 1rem;
+  color: var(--pixel-white);
+  text-shadow: 1px 1px 0px var(--pixel-black);
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* Input Fields */
+.pixel-input {
+  background: var(--pixel-white);
+  border: 2px solid var(--pixel-black);
+  color: var(--pixel-black);
+  font-family: 'Courier New', monospace;
+  font-weight: normal;
+  padding: 0.5rem;
+  box-shadow: 
+    inset 2px 2px 0px var(--pixel-gray-light),
+    inset -1px -1px 0px var(--pixel-black);
+}
+
+.pixel-input:focus {
+  outline: none;
+  border-color: var(--pixel-purple);
+  box-shadow: 
+    inset 2px 2px 0px var(--pixel-gray-light),
+    inset -1px -1px 0px var(--pixel-purple),
+    0 0 0 2px var(--pixel-purple);
+}
+
+.pixel-input::placeholder {
+  color: var(--pixel-gray-medium);
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--pixel-gray-light);
+  border: 1px solid var(--pixel-black);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--pixel-gray-dark);
+  border: 1px solid var(--pixel-black);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--pixel-black);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pixel-title {
+    font-size: 2.5rem;
+  }
+  
+  .countdown-timer {
+    gap: 1rem;
+  }
+  
+  .countdown-number {
+    font-size: 2rem;
+    padding: 0.5rem;
+    min-width: 60px;
+  }
+}
